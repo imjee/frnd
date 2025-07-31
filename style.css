@@ -1,0 +1,107 @@
+/* ... gunakan style.css pada jawaban sebelumnya pada bagian "2. Contoh style.css (Bagian Penting, Mirip IQOS)" ... */
+
+/* Tambahkan style admin form modern (dashboard) */
+.admin-form {
+    max-width: 410px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 24px #e6394630;
+    padding: 36px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.admin-form label {
+    font-size: 1.12em;
+    color: #222;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+.admin-form input[type="text"],
+.admin-form input[type="number"],
+.admin-form input[type="url"],
+.admin-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 7px;
+    border: 1.5px solid #c5c5c5;
+    font-size: 1em;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+.admin-form button[type="submit"] {
+    margin-top: 9px;
+    padding: 12px 0;
+    background: linear-gradient(90deg,#e63946 0%,#b3001b 100%);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.18em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.17s;
+    box-shadow: 0 2px 8px #e6394633;
+}
+.admin-form button[type="submit"]:hover { background: #b3001b; }
+#success-message {
+    color: green; text-align: center; margin-top: 10px; font-size: 1.1em;
+}
+.barang-admin-list {
+    margin: 36px auto 24px auto;
+    max-width: 900px;
+}
+.barang-admin-list .barang-card {
+    position:relative;
+    margin-bottom: 16px;
+}
+.edit-btn, .del-btn {
+    background: #fff;
+    color: #e63946;
+    border: 2px solid #e63946;
+    border-radius: 8px;
+    padding: 7px 18px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    transition: background 0.2s, color 0.15s;
+}
+.edit-btn:hover, .del-btn:hover {
+    background: #e63946;
+    color: #fff;
+}
+
+/* Login form style - modern */
+.login-container {
+    min-height: 100vh; display:flex; align-items:center; justify-content:center;
+}
+.login-form {
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 4px 24px #e6394630;
+    padding:38px 28px;
+    display:flex; flex-direction:column; align-items:center;
+    min-width: 320px;
+}
+.login-form h2 {margin-bottom:18px;color:#e63946;}
+.login-form input {
+    font-size:1.1em; margin-bottom:16px; padding:9px 12px; border-radius:7px; border:1.5px solid #ccc; width:100%; outline:none;
+}
+.login-form button {
+    background:var(--merah);
+    color:#fff;
+    font-size:1.1em;
+    font-weight:700;
+    padding:10px 0;
+    border:none;
+    border-radius:8px;
+    width:100%;
+    margin-bottom:8px;
+    cursor:pointer;
+    transition:background .17s;
+}
+.login-form button:hover { background:#b3001b;}
+.login-error { color:var(--merah); margin-top:7px; min-height:24px; }
