@@ -1,4 +1,4 @@
-const API_URL = "https://drc-victory-backend-production-xxxx.up.railway.app/api/barang";
+const API_URL = "bknd-production-635f.up.railway.app";
 const TOKEN = localStorage.getItem('drc_token') || "";
 
 // --- LANDING PAGE DYNAMIC ---
