@@ -1,107 +1,313 @@
-/* ... gunakan style.css pada jawaban sebelumnya pada bagian "2. Contoh style.css (Bagian Penting, Mirip IQOS)" ... */
+/* ====== FONT & RESET ====== */
+body {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #222;
+  overflow-x: hidden;
+}
 
-/* Tambahkan style admin form modern (dashboard) */
+/* ====== NAVBAR IQOS ====== */
+.navbar-iqos {
+  width: 100%;
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 2px 16px #2222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 38px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 68px;
+}
+.navbar-iqos .nav-logo img { height: 54px; }
+.navbar-iqos .nav-menu {
+  display: flex; gap: 38px; list-style: none; margin: 0; padding: 0;
+}
+.navbar-iqos .nav-menu li a {
+  text-decoration: none; font-size: 1.1em;
+  color: #222; font-weight: 600; padding: 2px 2px;
+  border-bottom: 2.5px solid transparent; transition: 0.2s;
+  letter-spacing: 1px;
+}
+.navbar-iqos .nav-menu li a:hover, .navbar-iqos .nav-menu li a:focus {
+  color: #e63946; border-bottom: 2.5px solid #e63946;
+}
+
+/* ====== HERO IQOS STYLE ====== */
+.hero-iqos {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+  padding-top: 68px;
+}
+.hero-bg-image {
+  background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+  position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;
+  filter: brightness(0.65) blur(1.5px);
+}
+.hero-overlay {
+  position: absolute; top:0; left:0; width:100%; height:100%; z-index:1;
+  background: linear-gradient(120deg,#fff 60%,#e63946 100%);
+  opacity: 0.55;
+}
+.hero-content-iqos {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin-top: 25px;
+}
+.hero-logo-iqos {
+  max-width: 160px;
+  height: auto;
+  margin: 0 auto 16px auto;
+  background: transparent;
+  filter: drop-shadow(0 4px 18px #e6394645);
+  display: block;
+}
+.section-kicker {
+  color: #e63946;
+  font-size: 1.2em;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.hero-title-iqos {
+  font-size: 3.7em; font-weight: 700; letter-spacing: 2.3px; margin: 4px 0 12px 0; line-height: 1.1em; color: #232323;
+  text-shadow: 0 2px 8px #e6394622;
+}
+.hero-title-iqos .highlight { color: #e63946; }
+.hero-subtitle-iqos {
+  font-size: 1.4em; color: #232323; margin-bottom: 30px; font-family: Arial,sans-serif; font-weight: 400;
+}
+.hero-btn-iqos {
+  color: #fff;
+  background: linear-gradient(90deg,#e63946 0%,#b3001b 100%);
+  border: none; border-radius: 30px;
+  font-size: 1.2em; font-weight: 700;
+  padding: 16px 42px;
+  letter-spacing: 1.2px;
+  box-shadow: 0 6px 32px #e6394630;
+  transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+.hero-btn-iqos:hover { background: #b3001b; transform: scale(1.05); box-shadow: 0 12px 36px #e6394655;}
+@media (max-width: 700px) {
+  .hero-title-iqos { font-size: 2.1em;}
+  .hero-logo-iqos { max-width: 80px;}
+  .hero-content-iqos { margin-top: 8px;}
+  .navbar-iqos {padding:0 8px;}
+}
+
+/* ====== PRODUK IQOS STYLE ====== */
+.section-iqos { padding: 100px 0 70px 0; width: 100%; max-width: 1300px; margin:0 auto; }
+.section-title-iqos {
+  text-align: center; font-size: 2.5em; color: #e63946; letter-spacing: 1.7px;
+  margin-bottom: 40px; font-family: 'Bebas Neue', Arial,sans-serif; font-weight: 700;
+}
+.produk-tabs-iqos {
+  display: flex; justify-content: center; gap: 20px; margin-bottom: 34px;
+}
+.produk-tab {
+  border: none; background: #fff; color: #e63946;
+  padding: 13px 36px; border-radius: 30px; font-family: 'Bebas Neue', Arial;
+  font-size: 1.22em; font-weight: 600; letter-spacing: 1.2px; box-shadow: 0 2px 8px #e6394620;
+  cursor: pointer; transition: background 0.17s, color 0.13s, box-shadow 0.16s; outline: none;
+}
+.produk-tab.active, .produk-tab:hover {
+  background: #e63946; color: #fff; box-shadow: 0 4px 18px #e6394640; 
+}
+.produk-list-iqos {
+  display: flex; flex-wrap: wrap; gap: 42px; justify-content: center;
+  min-height: 160px;
+  transition: opacity 0.5s;
+}
+.barang-card {
+  background: #fff; color: #222; border-radius: 22px; width: 310px; box-shadow: 0 6px 32px #e639463a;
+  padding: 32px 22px 24px 22px;
+  display: flex; flex-direction: column; align-items: center;
+  border-top: 7px solid #e63946;
+  position: relative;
+  margin-bottom: 14px;
+  opacity: 0; transform: translateY(20px); transition: 0.45s;
+  animation: fadeInCard 0.7s ease forwards;
+}
+@keyframes fadeInCard { to {opacity:1; transform:translateY(0);} }
+.barang-card img {
+  max-width: 200px; max-height: 140px; border-radius: 13px; margin-bottom: 18px; box-shadow: 0 2px 12px #e6394630; background: #f4f4f4;
+}
+.barang-card h3 {
+  margin: 0 0 6px 0; font-size: 1.21em; color: #e63946; font-weight: 700; text-align: center;
+}
+.barang-card .harga {
+  font-weight: bold; color: #222; background: #fff3f3; padding: 6px 20px; border-radius: 13px; margin-bottom: 12px; font-size: 1.22em; border: 1.5px solid #e63946;
+}
+.barang-card p {
+  margin: 0 0 18px 0; font-size: 1.03em; color: #444; text-align: center; min-height: 50px;
+}
+.beli-btn {
+  background: linear-gradient(90deg,#e63946 0%,#b3001b 100%);
+  color: #fff; padding: 10px 36px;
+  border: none; border-radius: 12px; font-size: 1.08em; cursor: pointer; text-decoration: none;
+  font-weight: 800; letter-spacing: 1px; box-shadow: 0 2px 8px #e6394633; transition: background 0.2s, transform 0.1s; margin-top: 7px;
+}
+.beli-btn:hover { background: #b3001b; transform: scale(1.04);}
+.barang-label {
+  position: absolute; top: 18px; left: 18px; background: #e63946; color: #fff; font-size: 0.95em; font-family: Arial,sans-serif; font-weight: 700; padding: 5px 17px; border-radius: 16px; letter-spacing: 1.3px; box-shadow: 0 2px 8px #e6394620; z-index: 1;
+}
+.barang-label.best { background: #181818; color: #ffe066; }
+
+/* Produk Carousel on Mobile */
+@media (max-width: 900px) {
+  .produk-list-iqos { overflow-x: auto; flex-wrap: nowrap; gap: 16px; padding-bottom: 15px;}
+  .barang-card { min-width: 84vw; max-width: 98vw;}
+}
+@media (max-width: 700px) {
+  .section-iqos { padding: 70px 0 40px 0;}
+}
+
+/* Animasi Fade-in Section */
+.fade-in { opacity:0; transform: translateY(32px); transition: 0.7s; }
+.fade-in.visible { opacity:1; transform: none; }
+
+/* ====== TENTANG ====== */
+.tentang-section.section-iqos {background: #fafafa;}
+.tentang-content-iqos { max-width: 800px; margin:0 auto; background: #fff; border-radius: 14px; box-shadow: 0 4px 14px #e6394622; padding: 38px 32px 28px 32px; text-align: center; }
+.tentang-title-iqos { color: #232323; font-size: 2em; margin-bottom: 10px;}
+.tentang-content-iqos .red { color: #e63946;}
+.tentang-content-iqos p { font-size: 1.14em; color: #232323;}
+.tentang-content-iqos ul { list-style: none; padding: 0; margin: 22px 0 0 0;}
+.tentang-content-iqos li { margin-bottom: 8px; font-size: 1.13em; color: #222; font-weight: 500; }
+.tentang-content-iqos i { color: #e63946; margin-right: 8px;}
+/* ====== FOOTER ====== */
+.footer-iqos { padding: 36px 0 16px 0; background: #181818; color: #fff; text-align: center; width: 100%; }
+.footer-container-iqos { max-width: 900px; margin: 0 auto; display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 18px;}
+.footer-logo img { height: 38px;}
+.footer-socials { display: flex; gap: 20px; font-size: 2.1em;}
+.footer-socials a { color: #fff; transition: color 0.18s; border-radius: 50%; background: #222; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; text-decoration: none;}
+.footer-socials a:hover { color: #e63946; background: #fff;}
+.footer-info { font-size: 1.09em; color: #c2c2c2; text-align: right;}
+@media (max-width: 700px){
+  .footer-container-iqos { flex-direction: column; align-items: center;}
+  .footer-logo {margin-bottom: 10px;}
+  .footer-socials {margin-bottom: 8px;}
+  .footer-info {text-align: center;}
+}
+
+/* ====== ADMIN FORM MODERN (dashboard) ====== */
 .admin-form {
-    max-width: 410px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 24px #e6394630;
-    padding: 36px 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  max-width: 410px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 24px #e6394630;
+  padding: 36px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .admin-form label {
-    font-size: 1.12em;
-    color: #222;
-    font-family: Arial, sans-serif;
-    font-weight: 500;
-    margin-bottom: 1px;
+  font-size: 1.12em;
+  color: #222;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  margin-bottom: 1px;
 }
 .admin-form input[type="text"],
 .admin-form input[type="number"],
 .admin-form input[type="url"],
 .admin-form textarea {
-    width: 100%;
-    padding: 8px 10px;
-    border-radius: 7px;
-    border: 1.5px solid #c5c5c5;
-    font-size: 1em;
-    margin-top: 2px;
-    margin-bottom: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1.5px solid #c5c5c5;
+  font-size: 1em;
+  margin-top: 2px;
+  margin-bottom: 8px;
 }
 .admin-form button[type="submit"] {
-    margin-top: 9px;
-    padding: 12px 0;
-    background: linear-gradient(90deg,#e63946 0%,#b3001b 100%);
-    color: #fff;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.18em;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background 0.17s;
-    box-shadow: 0 2px 8px #e6394633;
+  margin-top: 9px;
+  padding: 12px 0;
+  background: linear-gradient(90deg,#e63946 0%,#b3001b 100%);
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.18em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.17s;
+  box-shadow: 0 2px 8px #e6394633;
 }
 .admin-form button[type="submit"]:hover { background: #b3001b; }
 #success-message {
-    color: green; text-align: center; margin-top: 10px; font-size: 1.1em;
+  color: green; text-align: center; margin-top: 10px; font-size: 1.1em;
 }
 .barang-admin-list {
-    margin: 36px auto 24px auto;
-    max-width: 900px;
+  margin: 36px auto 24px auto;
+  max-width: 900px;
 }
 .barang-admin-list .barang-card {
-    position:relative;
-    margin-bottom: 16px;
+  position:relative;
+  margin-bottom: 16px;
 }
 .edit-btn, .del-btn {
-    background: #fff;
-    color: #e63946;
-    border: 2px solid #e63946;
-    border-radius: 8px;
-    padding: 7px 18px;
-    margin: 0 5px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1em;
-    transition: background 0.2s, color 0.15s;
+  background: #fff;
+  color: #e63946;
+  border: 2px solid #e63946;
+  border-radius: 8px;
+  padding: 7px 18px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1em;
+  transition: background 0.2s, color 0.15s;
 }
 .edit-btn:hover, .del-btn:hover {
-    background: #e63946;
-    color: #fff;
+  background: #e63946;
+  color: #fff;
 }
 
-/* Login form style - modern */
+/* ====== LOGIN FORM STYLE ====== */
 .login-container {
-    min-height: 100vh; display:flex; align-items:center; justify-content:center;
+  min-height: 100vh; display:flex; align-items:center; justify-content:center;
+  background: #f8f8f8;
 }
 .login-form {
-    background:#fff;
-    border-radius:16px;
-    box-shadow:0 4px 24px #e6394630;
-    padding:38px 28px;
-    display:flex; flex-direction:column; align-items:center;
-    min-width: 320px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 4px 24px #e6394630;
+  padding:38px 28px;
+  display:flex; flex-direction:column; align-items:center;
+  min-width: 320px;
 }
 .login-form h2 {margin-bottom:18px;color:#e63946;}
 .login-form input {
-    font-size:1.1em; margin-bottom:16px; padding:9px 12px; border-radius:7px; border:1.5px solid #ccc; width:100%; outline:none;
+  font-size:1.1em; margin-bottom:16px; padding:9px 12px; border-radius:7px; border:1.5px solid #ccc; width:100%; outline:none;
 }
 .login-form button {
-    background:var(--merah);
-    color:#fff;
-    font-size:1.1em;
-    font-weight:700;
-    padding:10px 0;
-    border:none;
-    border-radius:8px;
-    width:100%;
-    margin-bottom:8px;
-    cursor:pointer;
-    transition:background .17s;
+  background:linear-gradient(90deg,#e63946 0%,#b3001b 100%);
+  color:#fff;
+  font-size:1.1em;
+  font-weight:700;
+  padding:10px 0;
+  border:none;
+  border-radius:8px;
+  width:100%;
+  margin-bottom:8px;
+  cursor:pointer;
+  transition:background .17s;
 }
 .login-form button:hover { background:#b3001b;}
-.login-error { color:var(--merah); margin-top:7px; min-height:24px; }
+.login-error { color:#e63946; margin-top:7px; min-height:24px; }
+.login-form img { max-width: 90px; margin-bottom: 18px; display:block;}
