@@ -1,4 +1,4 @@
-const API_URL = "bknd-production-635f.up.railway.app";
+const API_URL = "confident-benevolence-production.up.railway.app";
 const TOKEN = localStorage.getItem('drc_token') || "";
 
 // --- LANDING PAGE DYNAMIC ---
