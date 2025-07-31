@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin - DRC Victory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#f8f8f8;">
+    <div class="login-container">
+        <form id="loginForm" class="login-form">
+            <img src="logo-drc.png" alt="DRC Victory" height="56" style="margin-bottom:22px">
+            <h2>Login Admin</h2>
+            <input type="text" id="username" placeholder="Username" required autocomplete="username">
+            <input type="password" id="password" placeholder="Password" required autocomplete="current-password">
+            <button type="submit">Login</button>
+            <div id="login-error" class="login-error"></div>
+        </form>
+    </div>
+    <script>
+    document.getElementById('loginForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const res = await fetch('https://drc-victory-backend-production-xxxx.up.railway.app/api/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (res.ok && data.token) {
+            localStorage.setItem('drc_token', data.token);
+            window.location.href = "dashboard.html";
+        } else {
+            document.getElementById('login-error').innerText = data.error || "Username/password salah";
+        }
+    }
+    </script>
+</body>
+</html>
