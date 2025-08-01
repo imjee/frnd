@@ -1,4 +1,4 @@
-const API_URL = "https://confident-benevolence-production.up.railway.app";
+const API_URL = "https://196ff485-102a-44c5-a0a4-304e23d28f09-00-3u7rui322d4dz.sisko.replit.dev";
 const TOKEN = localStorage.getItem('drc_token') || "";
 
 // --- LANDING PAGE DYNAMIC ---
