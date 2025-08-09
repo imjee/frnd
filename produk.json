@@ -5,7 +5,7 @@
       "nama": "Knalpot Racing V1",
       "deskripsi": "Knalpot racing berkualitas tinggi untuk performa maksimal.",
       "harga": 1500000,
-      "foto": "/images/knalpot1.jpg",
+      "foto": "/images/drc1.jpeg",
       "link": "https://tokopedia.com/produk1",
       "bestSeller": true,
       "newLaunching": false
@@ -15,7 +15,7 @@
       "nama": "Knalpot Racing V2",
       "deskripsi": "Model terbaru dengan desain sporty.",
       "harga": 1750000,
-      "foto": "/images/knalpot2.jpg",
+      "foto": "/images/drc2.jpeg",
       "link": "https://tokopedia.com/produk2",
       "bestSeller": false,
       "newLaunching": true
