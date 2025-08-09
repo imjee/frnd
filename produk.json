@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "_id": "1",
+      "nama": "Knalpot Racing V1",
+      "deskripsi": "Knalpot racing berkualitas tinggi untuk performa maksimal.",
+      "harga": 1500000,
+      "foto": "/images/knalpot1.jpg",
+      "link": "https://tokopedia.com/produk1",
+      "bestSeller": true,
+      "newLaunching": false
+    },
+    {
+      "_id": "2",
+      "nama": "Knalpot Racing V2",
+      "deskripsi": "Model terbaru dengan desain sporty.",
+      "harga": 1750000,
+      "foto": "/images/knalpot2.jpg",
+      "link": "https://tokopedia.com/produk2",
+      "bestSeller": false,
+      "newLaunching": true
+    }
+  ]
+}
