@@ -8,15 +8,15 @@ async function loadBarangList() {
     if (loadingEl) loadingEl.style.display = 'block';
 
     try {
-        // PERBAIKAN: Menggunakan path yang benar ke file JSON
+        // ✅ Perbaikan: Mengambil data dari path yang benar
         const res = await fetch('data/barang.json');
         if (!res.ok) {
             throw new Error(`Gagal memuat data: ${res.status}`);
         }
         
-        // PERBAIKAN: Mengambil data langsung karena formatnya array
         const result = await res.json();
-        allBarang = result.reverse(); // Data terbaru di atas
+        // ✅ Perbaikan: Mengambil data dari properti 'data' sesuai format JSON Anda
+        allBarang = result.data.reverse(); 
 
         showPublicBarangList(allBarang);
         
@@ -33,9 +33,9 @@ async function loadBarangList() {
 
 function showPublicBarangList(barangList) {
     const list = document.getElementById('barang-list');
-    if (!list) return; // Keluar jika elemen tidak ditemukan
+    if (!list) return;
 
-    list.innerHTML = ''; // Bersihkan konten sebelumnya
+    list.innerHTML = '';
 
     // Filter produk berdasarkan tab yang aktif
     let filteredBarang = [];
@@ -70,7 +70,6 @@ function showPublicBarangList(barangList) {
     });
 }
 
-// Menambahkan event listener untuk tab filter
 document.addEventListener('DOMContentLoaded', () => {
     loadBarangList();
 
@@ -79,11 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('click', (e) => {
             const newTab = e.target.dataset.tab;
             if (newTab !== currentTab) {
-                // Perbarui status tab
                 document.querySelector('.produk-tab.active')?.classList.remove('active');
                 e.target.classList.add('active');
                 currentTab = newTab;
-                // Tampilkan produk yang difilter
                 showPublicBarangList(allBarang);
             }
         });
