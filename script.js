@@ -1,5 +1,3 @@
-// --- SCRIPT UNTUK HALAMAN UTAMA (index.html) ---
-
 let allBarang = [];
 let currentTab = 'all';
 
@@ -8,18 +6,13 @@ async function loadBarangList() {
     if (loadingEl) loadingEl.style.display = 'block';
 
     try {
-        // ✅ Perbaikan: Mengambil data dari path yang benar
         const res = await fetch('data/barang.json');
         if (!res.ok) {
             throw new Error(`Gagal memuat data: ${res.status}`);
         }
-        
         const result = await res.json();
-        // ✅ Perbaikan: Mengambil data dari properti 'data' sesuai format JSON Anda
         allBarang = result.data.reverse(); 
-
         showPublicBarangList(allBarang);
-        
     } catch (err) {
         console.error('Gagal load barang:', err);
         const barangList = document.getElementById('barang-list');
